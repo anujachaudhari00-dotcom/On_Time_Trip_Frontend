@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Time Trip — About us</title>
+  <style>
+    :root {
+      --primary: #A15889;     /* Purple */
+      --primary-dark: #7a4269;
+      --blue: #3069B3;        /* Blue */
+      --blue-dark: #234c84;
+      --grey: #808080;        /* Gray */
+      --radius: 14px;
+      --shadow-1: 0 6px 24px rgba(0,0,0,0.08);
+      --shadow-2: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: var(--grey);
+    }
+
+    /* --- Header --- */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .brand img { height: 36px; }
+    .row { display: flex; gap: 10px; align-items: center; }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .btn-outline {
+      background: #fff;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    /* --- Banner --- */
+    .banner {
+      background-color: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* --- Content --- */
+    .container1 {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      line-height: 1.7;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+    }
+    .highlight {
+      color: var(--blue);
+      background: #e8f0fa;
+      padding: 3px 6px;
+      border-radius: 3px;
+    }
+    .services, .why { margin-top: 20px; }
+    .services h3, .why h3 { color: var(--primary); margin-bottom: 10px; }
+    .gst { margin-top: 20px; font-size: 14px; color: var(--grey); }
+
+    /* --- Footer --- */
+    footer {
+      background: #f2f2f2;
+      border-top: 1px solid #ddd;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3,1fr);
+      gap: 16px;
+      padding: 24px 0;
+    }
+    .list a {
+      color: var(--blue);
+      text-decoration: none;
+      display: block;
+      padding: 6px 0;
+    }
+    .list a:hover { color: var(--primary); }
+    .subtle { color: var(--grey); font-size: 14px; }
+
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+       <a class="brand" href="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Website/Home.html">
+        <img src="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Images/ontimetrip-Logo.png" alt="On Time Trip Logo">
+      </a>
+      <div class="row">
+        <button class="btn btn-outline">24x7 Support</button>
+        <button class="btn btn-primary">Agent Login</button>
+        <button class="btn btn-primary">Login or Sign in</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">About us</div>
+
+  <!-- Content -->
+  <div class="container1">
+    <p class="highlight">Get to know us!</p>
+    <p><b>ONTIMETRIP</b> established in June, 2022 at NCR Region Ghaziabad, is a startup with the purpose of serving customers with extremely low air fares at highly competitive & unmatchable prices. It's a professionally managed tour and travel solution provider company offering a wide range of online tour and travel services to its esteemed customer base under the licensed trademark OnTimeTrip.</p>
+    <p>We are amongst the growing start ups of traveling businesses. The Company's presence in most of the tour and travel solutions like booking of domestic & international flights, domestic & international hotels, and holiday packages. At present, we focus to help our customers by saving time and money as we offer our services up to extreme level of excellence. Beyond travel, there are footprints of memories, let’s create them together!</p>
+    <div class="services">
+      <h3>Our Services</h3>
+      <p><b>Flight Booking:</b> <span class="highlight">Our seamless online ticket booking process is smooth and easy, ensuring hassle-free flight booking at every step.</span></p>
+      <p><b>Hotel Booking:</b> <span class="highlight">We have database of the best properties in every major city in the world, in every star category with broad budget range.</span></p>
+      <p><b>Holiday Packages:</b> <span class="highlight">Our user friendly website makes it easy for enthusiastic travelers to plan and book a holiday simply at the click of a button.</span></p>
+    </div>
+    <div class="why">
+      <h3>Why OnTimeTrip?</h3>
+      <p><b>Competent Best Price:</b> <span class="highlight">We assure you best prices for your bookings, whether it is a flight, hotel or holiday, we have the best fares for you!</span></p>
+      <p><b>Easy & Quick Booking:</b> <span class="highlight">You can forget about all the hassles that come with bookings. Book your flight/hotel/holiday in just a few clicks!</span></p>
+      <p><b>24 x 7 Support:</b> <span class="highlight">Whether it is a day or night, we’re here for you. Talk to our customer support team anytime, from anywhere.</span></p>
+    </div>
+    <div class="gst">
+      <p><b>GSTIN:</b> 12345678987654321</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>On Time Trip</strong><p>Your trusted partner for affordable travel worldwide.</p></div>
+      <div class="list">
+        <strong>Explore</strong>
+        <a href="#">Deals</a>
+        <a href="#">Holiday Destinations</a>
+        <a href="#">Airlines</a>
+      </div>
+      <div class="list">
+        <strong>Quick Links</strong>
+        <a href="#">Help Center</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Terms &amp; Privacy</a>
+      </div>
+    </div>
+    <div class="container" style="padding:14px 0;border-top:1px solid #ddd;display:flex;justify-content:space-between;align-items:center;">
+      <span class="subtle">©<span id="year"></span> On Time Trip</span>
+      <div class="row subtle">
+        <span>EN</span><span aria-hidden="true">•</span><span>INR</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

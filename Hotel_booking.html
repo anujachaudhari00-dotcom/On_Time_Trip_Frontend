@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Booking Results — On Time Trip</title>
+  <style>
+    :root {
+      --primary: #A15889;
+      --primary-dark: #873c72;
+      --blue: #3069B3;
+      --gray: #808080;
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #f9fafb;
+      color: #222;
+    }
+
+    /* Header */
+    .header {
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 16px;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+    .brand img {
+      max-height: 50px;
+      width: auto;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+    }
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      border: 0;
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .btn-outline {
+      background: #fff;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+    }
+    .btn-outline:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Page Layout */
+    .layout {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    .filters {
+      flex: 1;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      height: fit-content;
+    }
+    .filters h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    .filters label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .filters input,
+    .filters select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .results {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      overflow: hidden;
+    }
+    .card img {
+      width: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 16px;
+      flex: 1;
+    }
+    .card-body h4 {
+      margin: 0 0 8px;
+      color: var(--blue);
+    }
+    .card-body p {
+      margin: 0 0 8px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+    .price {
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .book-btn {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .book-btn:hover {
+      background: #224a80;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 20px;
+      text-align: center;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+      }
+      .card {
+        flex-direction: column;
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="ontimetrip1.html">
+        <img src="ontimetrip-logo.png" alt="On Time Trip Logo">
+      </a>
+      <nav class="nav-links">
+        <a href="ontimetrip1.html#flights">Flights</a>
+        <a href="ontimetrip1.html#hotels">Hotels</a>
+        <a href="holiday_booking.html" class="active">Holidays</a>
+      </nav>
+      <div class="row">
+        <button class="btn btn-outline">24x7 Support</button>
+        <button class="btn btn-primary">Agent Login</button>
+        <button class="btn btn-primary">Login / Sign in</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="layout container">
+    <!-- Filters -->
+    <aside class="filters">
+      <h3>Filters</h3>
+      <label for="destination">Destination</label>
+      <select id="destination">
+        <option>Mumbai</option>
+        <option>Goa</option>
+        <option>Dubai</option>
+      </select>
+
+      <label for="duration">Duration</label>
+      <select id="duration">
+        <option>3 Nights</option>
+        <option>5 Nights</option>
+        <option>7 Nights</option>
+      </select>
+
+      <label for="price">Max Price</label>
+      <input type="range" id="price" min="5000" max="100000" step="5000">
+    </aside>
+
+    <!-- Results -->
+    <section class="results">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Goa Beach">
+        <div class="card-body">
+          <h4>Goa Holiday Package</h4>
+          <p>3 Nights, 4 Days • Flights + Hotel</p>
+          <p class="price">₹18,499 / person</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400" alt="Dubai">
+        <div class="card-body">
+          <h4>Dubai Holiday Package</h4>
+          <p>5 Nights, 6 Days • Flights + Hotel + Sightseeing</p>
+          <p class="price">₹45,999 / person</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> On Time Trip. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

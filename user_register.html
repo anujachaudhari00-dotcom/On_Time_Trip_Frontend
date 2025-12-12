@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Time Trip - Agent Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4 url('https://picsum.photos/1500/900?blur=3') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--grey-200);}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;letter-spacing: 0.2px;}
+    .brand img{height:36px}
+    .row{display:flex;gap:10px;align-items:center}
+    .btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer;transition:.2s}
+    .btn-primary{background-color: #A15889;color:#fff}
+    .btn-primary:hover{background-color: #6E3468;}
+    .btn-outline{background:#dbdada;border:1px solid var(--grey-200);color:var(--ink)}
+    .btn-outline:hover{background:#afafaf}
+    
+    .header-left-buttons, .header-right-buttons {
+      display: flex;
+      gap: 20px;
+    }
+    
+    
+
+    .header-left-buttons a, .header-right-buttons a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .contact-btn {
+      background: #A15889;
+    }
+    .about-btn {
+      background: #3069B3;
+    }
+    .register-btn {
+      background: #A15889;
+      font-weight: bold;
+    }
+
+    /* FORM CONTAINER */
+    .form-container {
+      max-width: 950px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 1px;
+    }
+
+    p.sub {
+      text-align: center;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    
+    .section-title {
+      background: #A15889;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 12px;
+      display: inline-block;
+      margin: 20px 0 10px;
+      border-radius: 3px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .name-box, .country-box, .state-box, .city-box, .address-box, .pin-box, .landline-box {margin-bottom: 15px; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px;}
+    label {display: inline-block; max-width: 100%; margin-bottom: 5px; font-weight: 700;}
+    .form-input {border-radius: 3px; background: #f3f3f3; padding-left: 50px; border: 1px solid #c9c6c6; box-shadow: none; height: 16px;}
+    .form-input {display: block; width: 80%; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #555; background-color: #fff; background-image: none;  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+
+    .select-country, .select-state {border-radius: 3px; background-color: #f3f3f3; padding-left: 40px; height: 30px; border: 1px solid #c9c6c6; display: block; width: 80%; font-size: 14px; padding: 6px 12px; color: #555; line-height: 1.4;}
+
+    .remark-box {margin-bottom: 0;}
+    
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      grid-column: span 3;
+      resize: none;
+      height: 70px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #f15a29;
+    }
+
+    /* CAPTCHA */
+    .captcha-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .captcha-box img {
+      height: 50px;
+      border: 1px solid #ccc;
+    }
+
+    .captcha-box a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    /* CHECKBOX + AGREEMENT */
+    .agreement {
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .agreement a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* BUTTON */
+    .create-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #3069B3;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .create-btn:hover {
+      background: #5199f7;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #222;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #ccc;
+      margin: 0 5px;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: #3069B3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+       <a class="brand" href="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Website/Home.html">
+        <img src="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Images/ontimetrip-Logo.png" alt="On Time Trip Logo">
+      </a>
+        <!--span>On Time Trip</span-->
+      </a>
+      <div class="row">
+        <button class="btn btn-outline" onclick="window.open('Support.html')">24x7 Support</button>
+        <button class="btn btn-primary">Agent Login</button>
+        <button class="btn btn-primary" onclick="window.open('Sign_in.html')">Login or Sign in</button>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- FORM -->
+  <form class="form-container">
+    <div class="sign-heading">
+      <h2>Sign Up Form</h2>
+      <p class="sub">sign up now to become a user</p>
+    </div>
+    <!-- BASIC INFO -->
+    <div class="section-title">Basic Information</div>
+      <div class="form-grid">
+
+        <div class="name-box">
+          <label>Your Name</label>
+          <input class="form-input" type="text" placeholder="Enter Name">
+        </div>
+
+        <div class="mobile-box">
+          <label>Mobile Number</label>
+          <input class="form-input" type="tel" placeholder="Mobile No.">
+        </div>
+
+        <div class="email-box">
+          <label>Email ID</label>
+          <input class="form-input" type="email" placeholder="Email ID">
+        </div>
+      
+        <div class="country-box">
+          <label>Select Country</label>
+          <select class="select-country" name="country-name" required="" aria-required="true">
+            <option value="">Please Select Country</option>
+            <option value="India">India</option>
+          </select>
+        </div>
+
+        <div class="state-box">
+          <label>Select State</label>
+          <select class="select-state" name="state-name" required="" aria-required="true">
+            <option value="">Please Select State</option>
+            <option value="Maharashtra">Maharashtra</option>
+          </select>
+        </div>
+        
+        <div class="city-box">
+          <label>City</label>
+          <input class="form-input" type="text" placeholder="City Name" required="" aria-required="true">
+        </div>
+      
+        <div class="address-box">
+          <label>Address</label>
+          <input class="form-input" type="text" placeholder="Address" required="" aria-required="true">
+        </div>
+      
+        <div class="pin-box">
+          <label>Pin Code</label>
+          <input class="form-input" type="text" placeholder="Pincode" required="" aria-required="true">
+        </div>
+
+        <div class="landline-box">
+          <label>Landline Number</label>
+          <input class="form-input" type="text" placeholder="Landline Number" required="" aria-required="true">
+        </div>
+
+        <div class="remark-box">
+          <label>Remark / Reference / any Other details</label>
+          <!--textarea class="form-input" type="text" placeholder="Remark / Reference / any Other details" required="" aria-required="true"></textarea-->
+        </div>
+        
+        <textarea placeholder="Remark / Reference / any Other details"></textarea>
+    </div>
+
+    <!-- KYC -->
+    <!--div class="section-title">KYC Information</div>
+    <div class="form-grid">
+      <input type="text" placeholder="Company Name">
+      <input type="text" placeholder="Enter Aadhar Number">
+      <br><br><input type="file">
+      <span class="note">File Type Allowed (jpg | jpeg | gif | png | pdf) Max 5MB</span>
+    </div-->
+
+    <!-- PAN -->
+    <!--div class="section-title">PAN Details</div>
+    <div class="form-grid">
+      <input type="text" placeholder="Name As Per PAN">
+      <input type="text" placeholder="PAN No.">
+      <br><br><input type="file">
+      <span class="note">File Type Allowed (jpg | jpeg | gif | png | pdf) Max 5MB</span>
+    </div-->
+
+    <!-- GST -->
+    <!--div class="section-title">GST Details</div>
+    <div class="form-grid">
+      <select>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <input type="text" placeholder="GST No.">
+      <br><br><input type="file">
+      <span class="note">File Type Allowed (jpg | jpeg | gif | png | pdf) Max 5MB</span>
+    </div-->
+
+    <!-- CAPTCHA -->
+    <div class="captcha-box">
+      <img src="https://dummyimage.com/150x50/ccc/000&text=5+3+6+8" alt="Captcha">
+      <a href="#">Refresh Captcha</a>
+      <input type="text" placeholder="Please Enter Captcha Code">
+    </div>
+
+    <!-- AGREEMENT -->
+    <div class="agreement">
+      <input type="checkbox"> By proceeding, you agree with our
+      <a href="terms_conditions.html">Terms of Service</a> &amp; <a href="#">Privacy Policy</a>
+    </div>
+
+    <!-- LOGIN LINK -->
+    <p style="text-align:center;">Do you already have an account ? <a href="Sign_in.html">Login here</a></p>
+
+    <!-- SUBMIT -->
+    <button class="create-btn">CREATE ACCOUNT</button>
+  </form>
+
+    <!-- Footer -->
+<footer style="background-color: white; color: black; padding: 30px 0; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+
+    <!-- Logo Section -->
+    <div style="flex: 1; min-width: 200px; text-align: center; margin-bottom: 20px;">
+      <img src="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Images/ontimetrip-Logo.png" alt="On Time Trip Logo" style="height: 50px;"> <!-- Keep logo same size -->
+    </div>
+
+    <!-- Explore -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Explore</h4>
+      <p><a href="#" style="color: black; text-decoration: none;">Holidays</a></p>
+      <p><a href="#" style="color: black; text-decoration: none;">Airlines</a></p>
+    </div>
+
+    <!-- Help & Info -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Help & Info</h4>
+      <p><a href="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Website/about.html" style="color: black; text-decoration: none;">About Us</a></p>
+      <p><a href="#" style="color: black; text-decoration: none;">Terms & Privacy</a></p>
+    </div>
+
+    <!-- Quick Access -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Quick Access</h4>
+      <p><a href="agent_login.html" style="color: black; text-decoration: none;">Agent Login</a></p>
+      <p><a href="owner_login.html" style="color: black; text-decoration: none;">Owner Login</a></p>
+    </div>
+  </div>
+
+  <div style="background: #3069B3; color:#fff; text-align:center; margin-top:24px; padding:16px 4px;">
+    <span style="opacity:.8;">&copy; 2025 On Time Trip. All rights reserved.</span>
+    <span style="color:#808080; margin-left:12px;">India | INR</span>
+  </div>
+</footer>
+</body>
+</html>

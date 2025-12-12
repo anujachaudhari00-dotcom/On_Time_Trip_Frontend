@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Time Trip — Contact Us</title>
+  
+  <style>
+    :root {
+      --primary: #8E4585;       /* Main Plum */
+      --primary-dark: #6E3468;  /* Dark plum hover */
+      --accent: #B86FB0;        /* Soft mauve accent */
+      --accent-dark: #5A2B55;   /* Deep purple for CTA */
+      --focus: 0 0 0 4px rgba(142, 69, 133, 0.35);
+
+      --ink: #0F172A;
+      --grey-900:#111827;
+      --grey-700:#374151;
+      --grey-500:#6B7280;
+      --grey-300:#D1D5DB;
+      --grey-200:#E5E7EB;
+      --grey-100:#F3F4F6;
+      --grey-50:#F9FAFB;
+
+      --radius: 14px;
+      --shadow-1: 0 6px 24px rgba(15,23,42,0.08);
+      --shadow-2: 0 10px 30px rgba(15,23,42,0.15);
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+/* Header */
+    .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--grey-200);}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;letter-spacing: 0.2px;}
+    .brand img{height:36px}
+
+    .nav-links{display:flex;gap:20px;align-items:center}
+    .nav-links a{color:var(--grey-700);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{background:var(--grey-100);color:var(--primary)}
+
+    .btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--primary-dark)}
+    .btn-outline{background:#fff;border:1px solid var(--grey-200);color:var(--ink)}
+    .btn-outline:hover{background:var(--grey-100)}
+
+    /* Banner */
+    .banner {
+      background-color: #3069B3;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 1100px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .info-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .info-box i {
+      font-size: 18px;
+      color: #ff6600;
+    }
+    .info-box b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Contact Form */
+    .contact-form h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .contact-form span {
+      color: black;
+    }
+    .form-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .form-row input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .btn-submit {
+      background-color: #3069B3;
+      border: none;
+      padding: 12px 20px;
+      color: #fff;
+      font-size: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background-color: grey;
+    }
+
+    /* --- Footer --- */
+    footer{background:white;border-top:1px solid var(--grey-200)}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:16px;padding:24px 0}
+    .list a{color:var(--grey-700);text-decoration:none;display:block;padding:6px 0}
+    .list a:hover{color:var(--primary)}
+    .subtle{color:var(--grey-500);font-size:14px}
+    .row {display:flex;gap:10px;align-items:center;}
+    
+    @media (max-width: 900px) {.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width: 560px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Website/Home.html">
+        <img src="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Images/ontimetrip-Logo.png" alt="On Time Trip Logo">
+        <!--span>On Time Trip</span-->
+      </a>
+      <div class="row">
+         <button class="btn btn-outline" onclick="window.location.href='contact.html'">24x7 Support</button>
+         <button class="btn btn-primary" onclick="window.location.href='agent_login.html'">Agent Login</button>
+         <button class="btn btn-primary" onclick="window.location.href='Sign_in.html'">Login or Sign in</button>
+      </div>
+    </div>
+  </header>
+    
+
+
+  <!-- Banner -->
+  <div class="banner">Contact Us</div>
+
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="info-box">
+        <i>📞</i>
+        <div>
+          <b>Have Questions? Call Us !</b>
+          1234567890
+        </div>
+      </div>
+      <div class="info-box">
+        <i>📧</i>
+        <div>
+          <b>Write us on !</b>
+          travel@ontimetrip.com
+        </div>
+      </div>
+      <div class="info-box">
+        <i>📍</i>
+        <div>
+          <b>Address</b>
+          On Time Trip 37, Dwarika Enclave, Raj Bagh<br>
+          Sahibabad Ghaziabad, Uttar Pradesh,<br>
+          India, 201005
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Contact <span>Us</span></h2>
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Your Name *" required>
+          <input type="email" placeholder="Your Email Address *" required>
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Phone Number">
+          <input type="text" placeholder="Subject">
+        </div>
+        <textarea placeholder="Message *" required></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  
+ <!-- Footer -->
+<footer style="background-color: white; color: black; padding: 30px 0; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+
+    <!-- Logo Section -->
+    <div style="flex: 1; min-width: 200px; text-align: center; margin-bottom: 20px;">
+      <img src="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Images/ontimetrip-Logo.png" alt="On Time Trip Logo" style="height: 50px;"> <!-- Keep logo same size -->
+    </div>
+
+    <!-- Explore -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Explore</h4>
+      <p><a href="#" style="color: black; text-decoration: none;">Deals</a></p>
+      <p><a href="#" style="color: black; text-decoration: none;">Destinations</a></p>
+      <p><a href="#" style="color: black; text-decoration: none;">Airlines</a></p>
+    </div>
+
+    <!-- Help & Info -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Help & Info</h4>
+      <p><a href="#" style="color: black; text-decoration: none;">Help Center</a></p>
+      <p><a href="C:/Users/chaud/OneDrive/Desktop/WORK/ON_time_Trip/Website/about.html" style="color: black; text-decoration: none;">About Us</a></p>
+      <p><a href="#" style="color: black; text-decoration: none;">Terms & Privacy</a></p>
+    </div>
+
+    <!-- Quick Access -->
+    <div style="flex: 1; min-width: 150px; text-align: center; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; font-size: 16px; color: black;">Quick Access</h4>
+      <p><a href="agent_login.html" style="color: black; text-decoration: none;">Agent Login</a></p>
+      <p><a href="owner_login.html" style="color: black; text-decoration: none;">Owner Login</a></p>
+    </div>
+  </div>
+
+  <div style="background: #3069B3; color:#fff; text-align:center; margin-top:24px; padding:16px 4px;">
+    <span style="opacity:.8;">&copy; 2025 On Time Trip. All rights reserved.</span>
+    <span style="color:#808080; margin-left:12px;">India | INR</span>
+  </div>
+</footer>
+ 
+
+  <!-- JavaScript -->
+  <script>
+    document.querySelector(".btn-whatsapp").addEventListener("click", () => {
+      alert("Redirecting to WhatsApp Support!");
+    });
+    document.querySelector(".btn-support").addEventListener("click", () => {
+      alert("Connecting to 24x7 Support!");
+    });
+    document.querySelector(".btn-login").addEventListener("click", () => {
+      alert("Redirecting to Login/Sign Up page...");
+    });
+
+    document.querySelector("form").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Your message has been sent successfully!");
+    });
+  </script>
+
+</body>
+</html>
